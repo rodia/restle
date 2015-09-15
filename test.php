@@ -45,7 +45,7 @@ function get_web_page( $url )
 }
 //hacemos la petición a la api via curl
 
-$response = get_web_page('http://amarillas.bo/?rubro=1&clasif2=Abogados%20multidisciplinarios&&idrubro=873&ciudad=Bolivia');
+$response = get_web_page('http://restle.hostingla.in/api/users/format/json/x-api-key/4ct47vW7j4aZJwt53HvPXr4UxcFZxczk9VAWkBcG');
 echo "<pre>";
 var_dump($response);
 echo "</pre>";
