@@ -2,18 +2,20 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-//debemos colocar esta línea para extender de REST_Controller
 require(APPPATH . '/libraries/REST_Controller.php');
 
 class Api extends REST_Controller {
 
-    //con esto limitamos las consultas y los permisos a la api
+    /**
+     * This variable manage the rules for access to method with levels and limit.
+     * @var array
+     */
     protected $methods = array(
-        'users_get' => array('level' => 0), //para acceder a users_get debe tener level 1 y no hay limite de consultas por hora
-        'user_get' => array('level' => 0, 'limit' => 10), //user_get sólo level 0, pero máximo 10 consultas por hora
-        'posts_user_get' => array('level' => 0, 'limit' => 10), //se necesita level 0 y sólo se pueden hacer 10 consultas por hora
-        'new_user_post' => array('level' => 1), //se necesita level 1, no hay limite de peticiones
-        'user_post' => array('level' => 1, 'limit' => 5), //se necesita level 1 y 5 peticiones
+        'users_get' => array('level' => 0),
+        'user_get' => array('level' => 0, 'limit' => 10),
+        'posts_user_get' => array('level' => 0, 'limit' => 10),
+        'new_user_post' => array('level' => 1),
+        'user_post' => array('level' => 1, 'limit' => 5),
     );
 
     //obtener datos de un usuario

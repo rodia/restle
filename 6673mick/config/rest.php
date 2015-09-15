@@ -103,7 +103,7 @@ $config['rest_auth'] = FALSE;
 | Note: If 'rest_auth' is set to 'session' then change 'auth_source' to the name of the session variable
 |
 */
-$config['auth_source'] = '';
+$config['auth_source'] = 'ldap';
 
 /*
 |--------------------------------------------------------------------------
@@ -330,7 +330,7 @@ $config['rest_key_length'] = 40;
 | 2012/06/12. See RFC 6648 specification for more details
 |
 */
-$config['rest_key_name'] = 'X-API-KEY';
+$config['rest_key_name'] = 'x-api-key';
 
 /*
 |--------------------------------------------------------------------------
@@ -389,7 +389,7 @@ $config['rest_logs_table'] = 'logs';
 |    ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 |
 */
-$config['rest_enable_access'] = TRUE;
+$config['rest_enable_access'] = FALSE;
 
 /*
 |--------------------------------------------------------------------------
@@ -487,3 +487,15 @@ $config['rest_ajax_only'] = FALSE;
 |
 */
 $config['rest_language'] = 'english';
+
+/*
+ |-------------------------------------------------------------------------
+ | REST wait time
+ |-------------------------------------------------------------------------
+ |
+ | This variale is defined in second, and define the time of wait for begin
+ | for accept the requests.
+ |
+ | for example if you desire one hour the value is 3600 = 60 * 60
+ */
+$config['rest_wait_time'] = 60;
