@@ -18,8 +18,11 @@ class Api extends REST_Controller {
         'user_post' => array('level' => 1, 'limit' => 5),
     );
 
-    //obtener datos de un usuario
-    //http://localhost/apiRestCodeigniter/api/user/id/userid/format/formato/X-API-KEY/miapikey
+    /**
+     * Get user data.
+     *
+     * @example http://localhost/apiRestCodeigniter/api/user/id/userid/format/formato/X-API-KEY/miapikey
+     */
     public function user_get() {
         if (!$this->get("id")) {
             $this->response(NULL, 400);
@@ -33,8 +36,12 @@ class Api extends REST_Controller {
         }
     }
 
-    //obtener mensajes de un usuario por la id del usuario
-    //http://localhost/apiRestCodeigniter/api/posts/id/id_user/format/formato/X-API-KEY/miapikey
+    /**
+     * Get user messages by id user
+     *
+     * The form for access this resource is:
+     * http://localhost/apiRestCodeigniter/api/posts/id/id_user/format/formato/X-API-KEY/miapikey
+     */
     public function posts_user_get() {
         if (!$this->get("id")) {
             $this->response(NULL, 400);
@@ -48,8 +55,13 @@ class Api extends REST_Controller {
         }
     }
 
-    //crear un nuevo usuario
-    //http://localhost/apiRestCodeigniter/api/new_user/X-API-KEY/miapikey
+    /**
+     * Create one new user
+     *
+     * The form for access this method is:
+     *
+     * http://localhost/apiRestCodeigniter/api/new_user/X-API-KEY/miapikey
+     */
     public function new_user_post() {
         if ($this->post("username") && $this->post("password")) {
             $this->load->model("api_model");
@@ -62,8 +74,11 @@ class Api extends REST_Controller {
         }
     }
 
-    //actualizar un nuevo usuario
-    //http://localhost/apiRestCodeigniter/api/user/X-API-KEY/miapikey
+    /**
+     * Update one user by id user
+     *
+     * http://localhost/apiRestCodeigniter/api/user/X-API-KEY/miapikey
+     */
     public function user_post() {
         $this->load->model("api_model");
         $result = $this->api_model->update($this->post("id"), array(
@@ -78,8 +93,11 @@ class Api extends REST_Controller {
         }
     }
 
-    //obtener a todos los usuarios
-    //http://localhost/apiRestCodeigniter/api/users/X-API-KEY/miapikey
+    /**
+     * Get all users
+     *
+     * http://localhost/apiRestCodeigniter/api/users/X-API-KEY/miapikey
+     */
     public function users_get() {
         $this->load->model("api_model");
         $users = $this->api_model->get_all();
