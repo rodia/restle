@@ -176,7 +176,7 @@ $config['auth_library_function'] = '';
 | Array of usernames and passwords for login, if ldap is configured this is ignored
 |
 */
-$config['rest_valid_logins'] = ['admin' => '1234'];
+$config['rest_valid_logins'] = ['manage' => '.moll34yuH'];
 
 /*
 |--------------------------------------------------------------------------
@@ -330,7 +330,7 @@ $config['rest_key_length'] = 40;
 | 2012/06/12. See RFC 6648 specification for more details
 |
 */
-$config['rest_key_name'] = 'x-api-key';
+$config['rest_key_name'] = 'api';
 
 /*
 |--------------------------------------------------------------------------

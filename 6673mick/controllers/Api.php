@@ -16,6 +16,8 @@ class Api extends REST_Controller {
         'posts_user_get' => array('level' => 0, 'limit' => 10),
         'new_user_post' => array('level' => 1),
         'user_post' => array('level' => 1, 'limit' => 5),
+        'trades_get' => array('level' => 0, 'limit' => 50),
+        'trade_get' => array('level' => 0, 'limit' => 50),
     );
 
     /**
@@ -106,6 +108,17 @@ class Api extends REST_Controller {
         } else {
             $this->response(NULL, 400);
         }
+    }
+
+    /**
+     *
+     */
+    public function trades_get() {
+
+    }
+
+    public function trade_get() {
+
     }
 
 }
